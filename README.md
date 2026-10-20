@@ -4,6 +4,8 @@
 
 A macOS document reader for keeping useful passages. Open PDF, Markdown, and Word (.docx) documents, highlight in five colours, and attach optional notes. Original documents are never modified. Annotations stay in a local SQLite database.
 
+![Highlighting a passage, adding a note, and an agent's highlight arriving live over MCP](docs/demo.gif)
+
 ## Run and build
 
 Requires macOS 12+, Node 24, pnpm 10, Rust, and Xcode command-line tools. Prebuilt binaries are not published; build from source.
@@ -36,7 +38,7 @@ The checked-in app icons are generated from `assets/icon.svg`. Regenerate with `
 - **Library** (**⇧⌘L**) lists all opened documents and annotation counts. Its search matches words across every quote and note; click a result to open its document at the passage. The toolbar search filters the current document's annotations.
 - **⌘F** focuses search, **⌘+ / ⌘− / ⌘0** control zoom, and **⌃⌘S** toggles the sidebar. Tabs remember zoom, Markdown mode, and scroll position during the session.
 
-Sample files live in `fixtures/`. Regenerate locally with `pnpm fixtures` (no downloads).
+Sample files live in `fixtures/`. Regenerate locally with `pnpm fixtures` (no downloads). The README demo is recorded from `scripts/demo/` with an in-memory backend: run `pnpm exec vite --port 5199` and then `node scripts/demo/record.mjs` (needs ffmpeg).
 
 ## Live share links
 
