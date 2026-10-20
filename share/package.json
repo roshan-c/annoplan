@@ -1,0 +1,19 @@
+{
+  "name": "annoplan-share",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "WRANGLER_SEND_METRICS=false wrangler dev --local --ip 127.0.0.1 --port 8787",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-pool-workers": "0.8.71",
+    "@cloudflare/workers-types": "4.20250906.0",
+    "wrangler": "4.35.0",
+    "typescript": "~5.9",
+    "vitest": "~3.2.4"
+  }
+}

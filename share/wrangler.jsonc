@@ -1,0 +1,11 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "annoplan-share",
+  "main": "src/index.ts",
+  "compatibility_date": "2025-09-06",
+  "assets": {"directory":"./public", "binding":"ASSETS", "run_worker_first":true},
+  "r2_buckets": [{"binding":"FILES", "bucket_name":"annoplan-files"}],
+  "durable_objects": {"bindings":[{"name":"ROOMS","class_name":"ShareRoom"},{"name":"RATE_LIMITS","class_name":"RateLimiter"}]},
+  "migrations": [{"tag":"v1", "new_sqlite_classes":["ShareRoom","RateLimiter"]}],
+  "observability": {"enabled":false}
+}

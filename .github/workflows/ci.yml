@@ -1,0 +1,32 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  test:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: src-tauri
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm typecheck
+      - run: pnpm test
+      - run: pnpm build
+      - run: cargo test --manifest-path src-tauri/Cargo.toml
+      - run: pnpm --dir mcp install --frozen-lockfile
+      - run: pnpm mcp:test
+      - run: pnpm --dir share install --frozen-lockfile
+      - run: pnpm --dir share typecheck
+      - run: pnpm share:build
+      - run: pnpm --dir share test

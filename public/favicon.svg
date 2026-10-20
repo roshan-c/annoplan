@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4c9bff"/>
+      <stop offset="1" stop-color="#0057d9"/>
+    </linearGradient>
+    <linearGradient id="sheen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff" stop-opacity="0.22"/>
+      <stop offset="0.5" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="page" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#eef1f6"/>
+    </linearGradient>
+    <linearGradient id="hl" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffd60a"/>
+      <stop offset="1" stop-color="#ffc300"/>
+    </linearGradient>
+    <linearGradient id="note" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffb340"/>
+      <stop offset="1" stop-color="#ff8a00"/>
+    </linearGradient>
+    <filter id="iconShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#000" flood-opacity="0.28"/>
+    </filter>
+    <filter id="pageShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#001a4d" flood-opacity="0.35"/>
+    </filter>
+    <filter id="noteShadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#5a2a00" flood-opacity="0.35"/>
+    </filter>
+    <clipPath id="squircle">
+      <rect x="100" y="100" width="824" height="824" rx="185"/>
+    </clipPath>
+  </defs>
+
+  <!-- Base tile (macOS grid: 824pt tile inside 1024 canvas) -->
+  <g filter="url(#iconShadow)">
+    <rect x="100" y="100" width="824" height="824" rx="185" fill="url(#bg)"/>
+  </g>
+  <g clip-path="url(#squircle)">
+    <rect x="100" y="100" width="824" height="412" fill="url(#sheen)"/>
+  </g>
+
+  <!-- Document -->
+  <g transform="rotate(-6 512 512)">
+    <g filter="url(#pageShadow)">
+      <path d="M318 222 H630 L712 304 V766 a34 34 0 0 1 -34 34 H318 a34 34 0 0 1 -34 -34 V256 a34 34 0 0 1 34 -34 Z" fill="url(#page)"/>
+    </g>
+    <!-- folded corner -->
+    <path d="M630 222 V280 a24 24 0 0 0 24 24 H712 Z" fill="#d5dbe6"/>
+
+    <!-- text lines -->
+    <g fill="#c3cad6">
+      <rect x="340" y="318" width="250" height="22" rx="11"/>
+      <rect x="340" y="378" width="316" height="22" rx="11"/>
+      <rect x="340" y="558" width="316" height="22" rx="11"/>
+      <rect x="340" y="618" width="280" height="22" rx="11"/>
+      <rect x="340" y="678" width="200" height="22" rx="11"/>
+    </g>
+
+    <!-- highlighted passage -->
+    <path d="M326 432 Q330 424 340 424 L664 420 Q676 420 676 432 L678 482 Q678 494 666 494 L340 498 Q328 498 326 486 Z" fill="url(#hl)"/>
+    <g fill="#7a5a00" fill-opacity="0.55">
+      <rect x="340" y="438" width="316" height="22" rx="11"/>
+      <rect x="340" y="498" width="240" height="22" rx="11" fill="#c3cad6" fill-opacity="1"/>
+    </g>
+    <path d="M326 492 L580 490 Q594 490 594 502 L594 530 Q594 542 580 542 L340 544 Q328 544 326 532 Z" fill="url(#hl)"/>
+    <rect x="340" y="498" width="236" height="22" rx="11" fill="#7a5a00" fill-opacity="0.55"/>
+  </g>
+
+  <!-- Note bubble -->
+  <g filter="url(#noteShadow)">
+    <path d="M640 612 h150 a52 52 0 0 1 52 52 v66 a52 52 0 0 1 -52 52 h-70 l-46 42 v-42 h-34 a52 52 0 0 1 -52 -52 v-66 a52 52 0 0 1 52 -52 Z" fill="url(#note)"/>
+  </g>
+  <g fill="#fff">
+    <rect x="626" y="660" width="164" height="20" rx="10"/>
+    <rect x="626" y="710" width="112" height="20" rx="10"/>
+  </g>
+</svg>

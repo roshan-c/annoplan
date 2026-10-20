@@ -1,0 +1,11 @@
+node_modules/
+dist/
+src-tauri/target/
+src-tauri/gen/
+.DS_Store
+*.log
+public/pdf/
+share/.wrangler/
+share/public/
+.env.local
+.env.*.local

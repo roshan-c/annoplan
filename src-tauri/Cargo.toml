@@ -1,0 +1,27 @@
+[package]
+name = "annoplan"
+version = "0.1.0"
+license = "MIT"
+description = "Read, highlight, and remember"
+edition = "2021"
+[lib]
+name = "annoplan_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+[dependencies]
+tauri = { version = "2", features = ["macos-private-api"] }
+tauri-plugin-dialog = "2"
+rusqlite = { version = "0.37", features = ["bundled"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10"
+uuid = { version = "1", features = ["v4"] }
+chrono = "0.4"
+base64 = "0.22"
+[dev-dependencies]
+tempfile = "3"
+
+[[example]]
+name = "share-db-harness"
+path = "../scripts/share-db-harness.rs"
